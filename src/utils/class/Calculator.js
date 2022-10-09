@@ -2,8 +2,12 @@ import { initialState } from "../initialStates";
 import { Component } from "react";
 
 export default class Calculator extends Component {
-    state = { ...initialState };
 
+    /**
+     * @ignore:Essa é a primera coisa quando o component inicia
+     */
+    state = { ...initialState };
+    
     constructor(props) {
         super(props);
 
@@ -11,10 +15,6 @@ export default class Calculator extends Component {
         this.setOperation = this.setOperation.bind(this);
         this.clearMemory = this.clearMemory.bind(this);
     }
-
-    // Esse métodos póderiam ser funções separadas, ou arquivos
-
-    //~~! Cada método resolve um problema específico
 
     clearMemory() {
         this.setState({ ...initialState });
@@ -24,7 +24,10 @@ export default class Calculator extends Component {
         try {
             if (number === "." && this.state.displayValue.includes(".")) return;
 
-            const clearDisplay = // Em que momento o display será limpo
+            /**
+             * @ignore:Especifíca em que momento o display será limpo
+             */
+            const clearDisplay = 
                 this.state.displayValue === "0" || this.state.clearDisplay;
 
             const currentValue = clearDisplay ? "" : this.state.displayValue;
@@ -43,7 +46,6 @@ export default class Calculator extends Component {
                 const values = [...this.state.values];
                 values[index] = newValue;
                 this.setState({ values });
-                // console.log(values)
             }
         } catch (error) {
             console.log(`ERROR: ${error}`);
@@ -64,7 +66,8 @@ export default class Calculator extends Component {
                 const values = [...this.state.values];
 
                 try {
-                    //~~! Use o switch case no lugar da função eval
+                    //TODO: Use o switch case no lugar da função eval
+
                     values[0] = eval(
                         `${values[0]} ${currentOperation} ${values[1]}`
                     );
