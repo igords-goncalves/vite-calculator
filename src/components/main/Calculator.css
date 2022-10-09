@@ -1,0 +1,25 @@
+.Calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 25%); /*4 colunas, cada uma ocupa 25%*/
+    grid-template-rows:  70px 90px 70px 70px 70px 70px;
+
+    height: 510px;
+    width: 300px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+    text-align: center;
+
+    background-color: #091F33;
+}
+
+.Calculator h1 {
+    font-family: noto-sans, sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+
+    grid-column: span 4;
+
+    margin: 20px 0 0 0;
+}

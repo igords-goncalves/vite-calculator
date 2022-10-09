@@ -1,0 +1,39 @@
+.Button {
+    background-color: #0C2C46;
+
+}
+
+.Button button {
+    color: #F6FCFC;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+
+    font-size: 1.4em;
+    font-weight: 600;
+
+    padding: 10px;
+}
+
+.Button button:hover {
+    color: #aeb3b3;
+}
+
+.triple {
+    grid-column: span 3;
+}
+
+.triple button {
+    color: #ff6347;
+}
+
+.triple button:hover {
+    color: #973c2e;
+}
+
+.operation button {
+    color: #84ebe7;
+}
+
+.operation button:hover {
+    color: #229997;
+}

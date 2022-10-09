@@ -1,0 +1,11 @@
+body {
+    background-color: #D1DAE5;
+    color: #F6FCFC;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    width: 100%;
+}
