@@ -1,11 +1,11 @@
 import './App.css'
-import Calculator from './components/main/Calculator'
+import RenderCalculator from './components/main/RenderCalculator'
 
 function App() {
 
   return (
     <div className="App">
-      <Calculator />
+      <RenderCalculator />
     </div>
   )
 }
