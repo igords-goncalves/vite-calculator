@@ -1,5 +1,10 @@
-import { initialState } from "../initialStates";
 import { Component } from "react";
+import Button from "../buttom/Button";
+import Display from "../display/Display";
+
+import { initialState } from "../../utils/initialStates";
+
+import "./Calculator.css";
 
 export default class Calculator extends Component {
 
@@ -27,7 +32,7 @@ export default class Calculator extends Component {
             /**
              * @ignore:Especifíca em que momento o display será limpo
              */
-            const clearDisplay = 
+            const clearDisplay =
                 this.state.displayValue === "0" || this.state.clearDisplay;
 
             const currentValue = clearDisplay ? "" : this.state.displayValue;
@@ -88,5 +93,52 @@ export default class Calculator extends Component {
         } catch (error) {
             throw `ERROR: ${error}`;
         }
+    }
+    render() {
+    
+    return (
+        <div className="Calculator">
+            <h1>Calculator</h1>
+            <Display value={this.state.displayValue} />
+            <Button label="AC" type="triple" click={this.clearMemory} />
+            <Button
+                label="/"
+                type="operation"
+                click={this.setOperation}
+            />
+            <Button label="1" click={this.setDigit} />
+            <Button label="2" click={this.setDigit} />
+            <Button label="3" click={this.setDigit} />
+            <Button
+                label="*"
+                type="operation"
+                click={this.setOperation}
+            />
+            <Button label="4" click={this.setDigit} />
+            <Button label="5" click={this.setDigit} />
+            <Button label="6" click={this.setDigit} />
+            <Button
+                label="+"
+                type="operation"
+                click={this.setOperation}
+            />
+            <Button label="7" click={this.setDigit} />
+            <Button label="8" click={this.setDigit} />
+            <Button label="9" click={this.setDigit} />
+            <Button
+                label="-"
+                type="operation"
+                click={this.setOperation}
+            />
+            <Button label="0" click={this.setDigit} />
+            <Button label="00" click={this.setDigit} />
+            <Button label="." click={this.setDigit} />
+            <Button
+                label="="
+                type="operation"
+                click={this.setOperation}
+            />
+        </div>
+    );
     }
 }
